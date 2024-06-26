@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="front-box" id="frontBox">
+            <button class="btn" onclick="showGame('snakeWaterGunGame')">Snake Water Gun</button>
+            <button class="btn" onclick="showGame('guessGame')">Guess Number</button>
+        </div>
+
+        <div class="game" id="snakeWaterGunGame" style="display: none;">
+            <div class="title">Snake Water Gun</div>
+            <div class="buttons">
+                <button class="btn" onclick="playGame('snake')">Snake</button>
+                <button class="btn" onclick="playGame('water')">Water</button>
+                <button class="btn" onclick="playGame('gun')">Gun</button>
+            </div>
+            <div class="status">
+                <div>User Choice: <span id="userChoice" class="choice"></span></div>
+                <div>Computer Choice: <span id="compChoice" class="choice"></span></div>
+                <br>
+                <div>User Score: <span id="userScore" class="score"></span></div>
+                <div>Computer Score: <span id="compScore" class="score"></span></div>
+                <div id="result" class="result"></div>
+            </div>
+            <div class="actions">
+                <button class="btn restart" onclick="handleRestart()">Restart</button>
+                <button class="btn exit" onclick="showFrontBox()">Exit</button>
+            </div>
+        </div>
+        
+        <div class="game" id="guessGame" style="display: none;">
+            <div class="title">Guess the Number (1-10)</div>
+            <input type="number" id="guessInput" class="input">
+            <button class="btn" onclick="handleGuess()">Guess</button>
+            <div id="message" class="message"></div>
+            <div class="actions">
+                <button class="btn restart" onclick="handleRestartGuess()">Restart Game</button>
+                <button class="btn exit" onclick="showFrontBox()">Exit</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
